@@ -1,4 +1,4 @@
-FROM ghost:5-alpine
+FROM ghost:6-alpine
 
 USER root
 
