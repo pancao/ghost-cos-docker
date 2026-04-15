@@ -16,6 +16,10 @@ RUN mkdir -p /tmp/adapter && \
     npm install --production && \
     rm -rf /tmp/adapter
 
+# 替换补丁版 index.js（修复自定义域名支持）
+COPY patches/ghost-cos-store-index.js \
+     /var/lib/ghost/content.orig/adapters/storage/ghost-cos-store/index.js
+
 USER node
 
 WORKDIR /var/lib/ghost
